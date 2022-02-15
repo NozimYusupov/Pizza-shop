@@ -8,18 +8,27 @@
         <%= p.title %>
       </div>
        <div>
-         <img src="<%= p.path_to_image %>"width="200" />
+         <img src="<%= p.path_to_image %>"height="200" width="200" />
       </div>
        <div>
         <%= p.description %>
       </div>
+        <div>
+        <%= p.size %> sm
+      </div>
        <div>
-        <%= p.price %>
+        <%= p.price %> rub
+      </div>
+      <div>
+        <button class="btn btn-sm btn-success">Add to cart</button>
       </div>
       
     </div>
   <% end %>
 </div>
+
+<br>
+<br>
 
 <button class="btn btn-primary" onclick="something()">Click me!</button>
 
