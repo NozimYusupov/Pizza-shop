@@ -5,3 +5,6 @@ function something() {
   alert(x);
 }
 
+function addToCart(id) {
+  alert('You added pizza with id: ' + id);
+}

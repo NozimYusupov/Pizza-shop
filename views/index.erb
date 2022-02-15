@@ -16,11 +16,11 @@
         <div>
         <%= p.size %> sm
       </div>
-       <div>
+      <div>
         <%= p.price %> rub
       </div>
       <div>
-        <button class="btn btn-sm btn-success">Add to cart</button>
+        <button class="btn btn-sm btn-success" onclick="addToCart(<%= p.id %>)">Add to cart</button>
       </div>
       
     </div>
@@ -31,5 +31,6 @@
 <br>
 
 <button class="btn btn-primary" onclick="something()">Click me!</button>
+
 
 
