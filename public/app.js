@@ -1,3 +1,7 @@
+$(function() {
+  updateOrdersInput();
+});
+
 function something() {
   var x = window.localStorage.getItem('bbb');
   x = x * 1 + 1;
@@ -13,6 +17,13 @@ function addToCart(id) {
   updateOrdersInput();
 }
 
+function updateOrdersInput() {
+  var orders = cartGetOrders();
+
+  $('#orders_input').val(orders);
+}
+
+
 function cartGetNumberOfItems() {
   var cnt = 0;
   for (var i = 0; i < window.localStorage.length; i++) {
@@ -24,12 +35,6 @@ function cartGetNumberOfItems() {
     }
   }
   return cnt;
-}
-
-function updateOrdersInput() {
-  var orders = cartGetOrders();
-
-  $('#orders_input').val(orders);
 }
 
 function cartGetOrders() {
