@@ -1,7 +1,3 @@
-$(function() {
-  updateOrdersInput();
-});
-
 function something() {
   var x = window.localStorage.getItem('bbb');
   x = x * 1 + 1;
@@ -15,6 +11,7 @@ function addToCart(id) {
   x = x * 1 + 1;
   window.localStorage.setItem(key, x);
   updateOrdersInput();
+  updateOrdersButton();
 }
 
 function updateOrdersInput() {
@@ -23,6 +20,10 @@ function updateOrdersInput() {
   $('#orders_input').val(orders);
 }
 
+function updateOrdersButton() {
+  var text = 'Cart(' + cartGetNumberOfItems() + ')';
+  $('#orders_button').val(text);
+}
 
 function cartGetNumberOfItems() {
   var cnt = 0;
