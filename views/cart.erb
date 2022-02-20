@@ -3,34 +3,56 @@
 <%= @items.inspect %>
 
 <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Qty</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% total_price = 0 %>
-        <% total_qty = 0 %>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% total_price = 0 %>
+    <% total_qty = 0 %>
 
-        <% @items.each do |item| %>
-          <tr>
-            <th><%= item[0].title %></th>
-            <th><%= item[0].price %></th>
-            <th><%= item[1] %></th>
-          </tr>
-        <% total_price += item[0].price * item[1].to_i%>
-        <% total_qty += item[1].to_i %>
+    <% @items.each do |item| %>
+      <tr>
+        <th><%= item[0].title %></th>
+        <th><%= item[0].price %></th>
+        <th><%= item[1] %></th>
+      </tr>
 
-       <% end %>
-          <tr>
-            <th>Total</th>
-            <th><%= total_price %></th>
-            <th><%= total_qty %></th>
-          </tr>
- 
+      <% total_price += item[0].price * item[1].to_i%>
+      <% total_qty += item[1].to_i %>
+
+    <% end %>
+
+    <tr>
+      <th>Total</th>
+      <th><%= total_price %></th>
+      <th><%= total_qty %></th>
+    </tr>
       
-      </tbody>
+  </tbody>
+<table>
 
-    </table>
+<form action="/place_order" method="post" role="form">
+  <input name="order[order_input]" type="hidden" value="<%= @orders_input%>">
+    <div class="form-group">
+    <label>Your name</label>
+    <input name="order[name]" type="text" class="form-control" placeholder="Enter your name" >
+  </div>
+
+  <div class="form-group">
+    <label>your phone</label>
+    <input name="order[phone]" type="text" class="form-control" placeholder="enter your phone number" >
+  </div>
+   
+   <div class="form-group">
+    <label>Delivery address</label>
+    <input name="order[address]" type="text" class="form-control" placeholder="Delivery address" >
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Place this order!</button>
+  
+</form>
+
