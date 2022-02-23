@@ -37,6 +37,12 @@ post '/cart' do
   erb :cart
 end 
 
+post '/place_order' do
+  @order = Order.create params[:order]
+  
+  erb "Thank you! Order has been placed."
+
+end
 
 def parse_orders_input orders_input
   s1 = orders_input.split(/,/)
