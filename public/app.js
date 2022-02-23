@@ -50,3 +50,11 @@ function cartGetOrders() {
   }
   return orders;
 }
+
+function cancel_order() {
+  window.localStorage.clear();
+
+  updateOrdersInput();
+  updateOrdersButton();
+  return false; 
+}

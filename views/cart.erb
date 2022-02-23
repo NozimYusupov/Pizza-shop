@@ -36,7 +36,7 @@
 <table>
 
 <form action="/place_order" method="post" role="form">
-  <input name="order[order_input]" type="hidden" value="<%= @orders_input%>">
+  <input name="order[orders_input]" type="hidden" value="<%= @orders_input%>">
     <div class="form-group">
     <label>Your name</label>
     <input name="order[name]" type="text" class="form-control" placeholder="Enter your name" >
@@ -52,7 +52,8 @@
     <input name="order[address]" type="text" class="form-control" placeholder="Delivery address" >
   </div>
  
-  <button type="submit" class="btn btn-primary">Place this order!</button>
-  
+  <button type="submit" class="btn btn-primary btn-lg">Place this order!</button>
+  <button class="btn btn-danger btn-lg" onclick="return cancel_order()">Cancel</button>
+
 </form>
 
