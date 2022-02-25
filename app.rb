@@ -33,7 +33,6 @@ post '/cart' do
     item[0] = Product.find(item[0])
   end
 
-  @o = {}
   erb :cart
 end 
 
